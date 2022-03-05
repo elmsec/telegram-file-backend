@@ -2,7 +2,7 @@
 
 This proxy backend helps you serve a file sent to your Telegram bot on your website by using Telegram servers directly. Instead of your bot token in plain text, it uses an AES encrypted version of the token. So your bot token doesn't get exposed to the outside world while you'll still be able to serve a file using Telegram's servers as a file backend.
 
-As an example, I added a Python script to encrypt given bot token. You can use it to create encrypted bot tokens as you'll need an encrypted token to request files from the proxy server.
+As an example of encrypting a bot token in programming languages other than Go, I included a Python script to encrypt the given bot token. Since you will need an encrypted token to request files from the proxy server, you can use this to generate encrypted bot tokens.
 
 ## Set up
 
