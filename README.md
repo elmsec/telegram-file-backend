@@ -1,4 +1,5 @@
-# Telegram File Backend
+# Telegram* File Backend
+*** Please use it at your own risk. ***
 
 This proxy backend helps you serve a file sent to your Telegram bot on your website by using Telegram servers directly. Instead of your bot token in plain text, it uses an AES encrypted version of the token. So your bot token doesn't get exposed to the outside world while you'll still be able to serve a file using Telegram's servers as a file backend.
 
@@ -16,3 +17,7 @@ python encryptor/encrypt.py 'YOUR_BOT_TOKEN'
 2. Run a redis instance
 3. Run the proxy
 4. Visit the proxy server. E.g `http://localhost:4627/<ENCRYPTED_BOT_TOKEN>/<FILE_ID>`
+
+## *Disclosure and Warning
+*** Please use it at your own risk. ***
+We are not affiliated with, funded, or in any way associated with Telegram Messenger™.
