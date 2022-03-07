@@ -1,9 +1,10 @@
 package http
 
 import (
-	"github.com/elmsec/telegram-file-backend/pkg/crypto"
 	"os"
 	"strings"
+
+	"github.com/elmsec/telegram-file-backend/pkg/crypto"
 )
 
 var key = []byte(os.Getenv("PROXY_AES_KEY"))
@@ -15,10 +16,6 @@ func ParseUrl(path string) (botToken string, fileId string, err error) {
 
 	encryptedString := information[0]
 	botToken, err = crypto.DecryptPayload(key, iv, encryptedString)
-	if err != nil {
-		return "", "", err
-	}
-
 	if err != nil {
 		return "", "", err
 	}

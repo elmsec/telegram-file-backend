@@ -5,11 +5,12 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/elmsec/telegram-file-backend/pkg/database"
-	"github.com/elmsec/telegram-file-backend/pkg/entities"
 	"log"
 	"net/http"
 	"time"
+
+	"github.com/elmsec/telegram-file-backend/pkg/database"
+	"github.com/elmsec/telegram-file-backend/pkg/entities"
 )
 
 var redisClient = database.NewRedisClient()
@@ -80,8 +81,5 @@ func AddFileToCache(fileId string, fileObj entities.TelegramResponse) error {
 	// Telegram guarantees at least one hour of validity
 	cachePeriod := time.Hour
 	err = redisClient.Set(ctx, fileId, fileObjJson, time.Duration(cachePeriod)).Err()
-	if err != nil {
-		return err
-	}
-	return nil
+	return err
 }
